@@ -1,4 +1,4 @@
-//Zadanie 1
+// Z A D A N I E  1
 
 let a = 6;
 let imie = "Marcin";
@@ -12,13 +12,13 @@ console.log(b);
 console.log(flag);
 console.log(c);
 
-//Zadanie 2
+// Z A D A N I E  2
 const a = 2;
 const b = 6;
 let sum = 0;
 sum = a+b;
 console.log(sum);
 
-//Zadanie 3
+// Z A D A N I E  3
 let d;
 console.log(d);//undefined, ponieważ nie ma przypisanej wartości.
