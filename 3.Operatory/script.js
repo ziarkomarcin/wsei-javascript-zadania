@@ -2,7 +2,7 @@
 
 let a = true;
 let b = false;
-console.log(a==b);
+console.log(a==b); 
 
 // Z A D A N I E  2
 
@@ -42,3 +42,4 @@ let num2 = 12;
 let result = null;
 result = num1>num2;
 console.log(result);
+//
