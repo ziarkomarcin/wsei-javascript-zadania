@@ -69,3 +69,59 @@ function xxx(tab){
 xxx([1,2,3,4,5]);
 
 // Z A D A N I E  6
+
+function aaa(tab){
+    let average = (array) => array.reduce((a, b) => a += b) / array.length;
+    avg = average(tab);
+    let x = tab.filter(x => x % 2 == 0);
+
+   return ( x.reduce((a,b) => a += b) / x.length);
+}
+console.log(aaa([6,7,8,9,10]));
+
+// Z A D A N I E  7
+
+function bbb(tab){
+    return (tab.sort((a, b) => a - b));
+}
+console.log(bbb([11,1,4,44,18]));
+
+// Z A D A N I E  8
+
+const tab1 = [11, 22, 33];
+const tab2 = [44, 55, 66];
+function write(tab1, tab2)
+{
+  var x = 0;
+  const tab3 = [];
+
+  for(var a = x; a <= tab1.length - 1; a++)
+  {
+    tab3[x] = tab1[x] + tab2[x];
+    x++;
+  }
+    console.log(tab3);
+}
+write(tab1, tab2);
+
+// Z A D A N I E  9
+
+function ccc(a,b){ 
+        return a.filter(c => c != b);
+}
+console.log(ccc([1,2,3,4,5],3));
+
+// Z A D A N I E  10
+
+const tab = [-99, -17, 0, 123, 512];
+var counter = 0;
+function write(tab)
+{
+  for( var a = counter; a < tab.length; a++)
+  {
+      tab[a] = (tab[a] - (2*tab[a]));
+    var arr = tab;
+  }
+  console.log(arr);
+}
+write(tab);
