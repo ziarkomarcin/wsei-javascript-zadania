@@ -113,7 +113,7 @@ let stairs = {
     },
 
     tellMeMyStair: function() {
-        console.log(`Your Stair: ${this.yourStair}`);
+        return `Your Stair: ${this.yourStair}`;
     }
 };
 
