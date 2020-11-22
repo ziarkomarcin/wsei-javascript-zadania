@@ -13,11 +13,13 @@ console.log(tab);
   // . 3 .
     console.log(tab2);
   // . 4 .
-    // DO ZROBIENIA
+    for (let x = 1; x < tab2.length - 1; x += 2) {
+    console.log(tab2[x]);
+    }
   // . 5 .
-    // DO ZROBIENIA
+    console.log(tab2.filter((value) => typeof value === 'string'));
   // . 6 .
-    // DO ZROBIENIA
+    console.log(tab2.filter((value) => typeof value === 'number'));
 
 // Z A D A N I E  3
 
@@ -37,9 +39,9 @@ for (var b = 0; b < numbers.length; b++) {
   // . 3 .
     console.log(sum/numbers.length);
   // . 4 .
-    // DO ZROBIENIA
+    console.log(tab2.filter(x => x % 2 == 0));
   // . 5 .
-    // DO ZROBIENIA
+    console.log(tab2.filter(x => x % 2 != 0));
   // . 6 .
     let max = Math.max(...numbers);
     console.log(max);
@@ -49,3 +51,21 @@ for (var b = 0; b < numbers.length; b++) {
   // . 8 .
     numbers.reverse();
     console.log(numbers);
+
+// Z A D A N I E  4
+
+    function xxx(tab){
+    return tab.reduce((a,b) => (a+b));
+}
+console.log(xxx([1,2,3,4,5]));
+
+// Z A D A N I E  5
+
+function xxx(tab){
+    let average = tab.reduce((a, b) => a += b) / tab.length;
+
+    tab.map((a) => console.log(a * average));
+}
+xxx([1,2,3,4,5]);
+
+// Z A D A N I E  6
