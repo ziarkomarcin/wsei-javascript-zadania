@@ -29,3 +29,78 @@ personA.newCity("Andrychów");
 console.log(personA);
 console.log(personB);
 console.log(personE);
+
+// Z A D A N I E  2
+
+class Calculator{
+    constructor(){
+        this.memory = 0;
+        this.result = 0;
+        this.history = [];
+    }
+    sum(x, y){
+        this.result = x + y;
+        this.toHistory(x,y, '+');
+        return this.result;
+
+    }
+    difference(x, y){
+        this.result = x - y;
+        this.toHistory(x,y, '-');
+        return this.result;
+    }
+    product(x, y){
+        this.result = x * y;
+        this.toHistory(x,y, '*');
+        return this.result;
+    }
+    quotient(x, y){
+        if( y === 0) throw Error("DON'T DO THAT!!!");
+        this.result = x / y;
+        this.toHistory(x,y, '/');
+        return this.result;
+    }
+    saveToMemory(){
+        this.memory = this.result; 
+    }
+    flushMemory(){
+        this.memory = 0;
+    }
+
+    printMemory(){
+        console.log(this.memory)
+    }
+
+    toHistory(x,y, operation){
+        this.history.push({x,y, operation, result: this.result})
+    }
+    flushHistory(){
+        this.history = [];
+    }
+    printHistory(){
+        this.history.forEach((obj, i) => console.log(`${i}: ${obj.a} ${obj.operation} ${obj.b} = ${obj.result}`));
+    }
+}
+
+// Z A D A N I E  3
+
+class Game{
+    random() {
+        Game.prototype.x = setInterval(function(){Game.prototype.number = Math.round(Math.random() * (10 - 1) + 1);}, 1000);
+    }
+    win() {
+      Game.prototype.winInterval= setInterval(function(){
+          if (Game.prototype.number > 5) {
+          console.log('Win')
+          clearInterval(Game.prototype.x);
+          clearInterval(Game.prototype.winInterval);       
+          } else {
+          console.log('Not Today My Friend')
+        }}, 1000);
+    }
+  }
+  const game = new Game();
+  const gameA = new Game();
+  
+  game.random();
+  gameA.win();
