@@ -12,10 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
 // Z A D A N I E  2
   
   function display(a) {
+    // . 1 .
         console.log(a.innerHTML);
+    // . 2 .
         console.log(a.outerHTML);
+    // . 3 .
         console.log([...a.classList].join(''));
+    // . 4 .
         console.log([...a.classList]);
+    // . 5 .
         console.log(a.dataset)
     }
 
