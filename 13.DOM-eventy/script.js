@@ -60,4 +60,62 @@ switchColor();
     
     // Z A D A N I E  5
   
+  function countMyClicks() {
+    const button = document.getElementById('ex5-button');
+    var a = 0;
+    button.addEventListener('click', counter);
+    
+    function counter() {
+        ++a;
+        button.nextElementSibling.innerText = a;
+
+        if (a === 10) button.removeEventListener('click', counter);
+
+    }
+}
+
+countMyClicks();
+  
+  // Z A D A N I E  6
+  
+  function redOrWhiteColor() {
+    document.addEventListener('scroll', (event) => {
+        var whereAmI = window.scrollY;
+        var body = document.querySelector('body');
+
+        if (whereAmI > 200) {
+            body.style.backgroundColor = 'red';
+        } else {
+            body.style.backgroundColor = 'white';
+        }
+    }); 
+}
+
+redOrWhiteColor();
+  
+  // Z A D A N I E  7
+  
+   var ourInput = document.querySelector('#calculator > input');
+    var clearFlag = false;
+    var another = false;
+
+    document.querySelectorAll('#calculator > div > button').forEach((element) => {
+        element.addEventListener('click', (event) => {
+            if (clearFlag == true) {
+                ourInput.value = "";
+                clearFlag = false;
+            }
+            ourInput.value = ourInput.value + event.target.innerText;
+            if (another == true) {
+                ourInput.value = eval(ourInput.value);
+                another = false;
+                clearFlag = true;
+            }
+            if (['/', '*', '+', '-'].includes(event.target.innerText)) {
+                another = true;
+            }
+        });
+    });
+  
 });
+
