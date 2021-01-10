@@ -209,4 +209,126 @@ document.body.append(secondDiv, r00t);
     }
   }
   document.querySelector('#abc').addEventListener('click', coolFun );
+  
+    // Z A D A N I E  9
+
+  var nextFormulage = document.createElement("form");
+  root.appendChild(nextFormulage);
+  var yourName = document.createElement("input");
+  yourName.setAttribute('type', 'text');
+  yourName.setAttribute('value', 'Name');
+  var lastname = document.createElement("input");
+  lastname.setAttribute('type', 'text');
+  lastname.setAttribute('value', 'Lastname');
+  var age = document.createElement("input");
+  age.setAttribute('type', 'text');
+  age.setAttribute('value', 'Age');
+  var howManyKids = document.createElement("input");
+  howManyKids.setAttribute('type', 'text');
+  howManyKids.setAttribute('value', 'HowManyKids');
+
+  nextFormulage.appendChild(yourName);
+  nextFormulage.appendChild(lastname);
+  nextFormulage.appendChild(age);
+  nextFormulage.appendChild(howManyKids);
+
+  var moreButton = document.createElement('button');
+  moreButton.id = "more"
+  moreButton.type = 'button'
+  moreButton.innerText = "Więcej";
+  nextFormulage.appendChild(moreButton);
+
+  var createButton = document.createElement('button');
+  createButton.id = "create"
+  createButton.type = 'button'
+  createButton.innerText = "Utwórz";
+  nextFormulage.appendChild(createButton);
+
+  var nameTab = [];
+  var lastnameTab = [];
+  var ageTab = [];
+  var kidsTab = [];
+
+  function moreFields(){
+    nameTab.push(yourName.value);
+    lastnameTab.push(lastname.value);
+    ageTab.push(age.value);
+    kidsTab.push(howManyKids.value);
+    yourName.value = '';
+    lastname.value = '';
+    age.value = '';
+    howManyKids.value = '';
+
+  }
+  document.querySelector('#more').addEventListener('click', moreFields);
+
+  function createTable(){
+    nameTab.push(yourName.value);
+    lastnameTab.push(lastname.value);
+    ageTab.push(age.value);
+    kidsTab.push(howManyKids.value);
+    yourName.value = '';
+    lastname.value = '';
+    age.value = '';
+    howManyKids.value = '';
+
+
+    var tab = document.createElement("table");
+    
+    var header = document.createElement('tr');
+    tab.appendChild(header);
+    var name = document.createElement('th');
+    name.innerHTML = "Name";
+    var lastName = document.createElement('th');
+    lastName.innerHTML = "Lastname";
+    var age1 = document.createElement('th');
+    age1.innerHTML = "Age";
+    var kids = document.createElement('th');
+    kids.innerHTML = "HowManyKids";
+    
+    root.appendChild(tab);
+    header.appendChild(name);
+    header.appendChild(lastName);
+    header.appendChild(age1);
+    header.appendChild(kids);
+    
+    for (var i = 0; i < nameTab.length; i++) {
+      var item = document.createElement('tr');
+      tab.appendChild(item);
+      var del = document.createElement('button');
+      del.innerText = "Usuń";
+      item.appendChild(del);
+
+      var newName = document.createElement('td');
+      newName.innerText = nameTab[i];
+      var newLastname = document.createElement('td');
+      newLastname.innerText = lastnameTab[i];
+      var newAge = document.createElement('td');
+      newAge.innerText = ageTab[i];
+      var newKids = document.createElement('td');
+      newKids.innerText= kidsTab[i];   
+
+      
+      item.appendChild(newName);
+      item.appendChild(newLastname);
+      item.appendChild(newAge);
+      item.appendChild(newKids);
+      item.appendChild(del);
+
+      del.addEventListener('click', deleteA);
+    
+    }
+    nameTab = [];
+    lastnameTab = [];
+    ageTab = [];
+    kidsTab = [];
+  }
+
+  function deleteA(e) {
+    
+    e.target  .parentElement.remove()
+  }
+
+  document.querySelector('#create').addEventListener('click', createTable);
+  
 });
