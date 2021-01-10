@@ -349,4 +349,53 @@ document.body.append(secondDiv, r00t);
 
   document.querySelector('#change').addEventListener('click', changeLetters);
   
+  // Z A D A N I E  11
+
+var numbersInTxtBtn = document.createElement('button');
+numbersInTxtBtn.innerText = 'Check';
+var numbersInTxt = document.createElement('input');
+numbersInTxt.type = 'text';
+
+const rut = document.getElementById('root');
+
+function numbers(a) {
+    if (!/\d/.test(a)) {
+        return 'There are no numbers';
+    }
+
+    var xxx = a.replace(/[^0-9]/g, ' ').split(' ');
+
+    var sum = 0;
+    var notSum = 1;
+
+    xxx.forEach((i) => {
+        if (!i.length) {
+            return;
+        }
+
+        i = parseInt(i);
+
+        sum += i;
+        notSum *= i;
+      
+      console.log(sum);
+    });
+
+    for (var i = 0; i < notSum; ++i) {
+        var div = document.createElement('div');
+        div.innerText = a;
+
+        document.body.append(div, rut);
+    }
+
+    return sum;
+}
+
+numbersInTxtBtn.addEventListener('click', () => {
+    console.log(numbers(numbersInTxt.value));
+});
+
+document.body.append(numbersInTxt, rut);
+document.body.append(numbersInTxtBtn, rut);
+  
 });
