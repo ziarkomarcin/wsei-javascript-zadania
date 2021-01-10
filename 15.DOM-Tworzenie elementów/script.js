@@ -398,4 +398,47 @@ numbersInTxtBtn.addEventListener('click', () => {
 document.body.append(numbersInTxt, rut);
 document.body.append(numbersInTxtBtn, rut);
   
+// Z A D A N I E  12
+  
+//const rut = document.getElementById('root');
+// ^ zastosowane z zadania wyżej
+
+const stringButton = document.createElement('button');
+stringButton.innerText = 'Click';
+
+const stringInput = document.createElement('input');
+stringInput.type = 'text';
+
+function string(a) {
+    const hereIsThatDiv = {
+        txt: a,
+        newAla: function () {
+            if (this.txt.indexOf('Ala') == -1) {
+                return false;
+            }
+
+            this.txt = this.txt.replace('Ala', 'Ola');
+            console.log(this.txt);
+
+            return true;
+        }
+    }
+
+    if (!hereIsThatDiv.newAla()) {
+        const thatDiv = document.createElement('div');
+        thatDiv.innerText = 'Słowo Ala nie występuje w tekście';
+
+        document.body.append(thatDiv, rut);
+    }
+}
+
+
+stringButton.addEventListener('click', () => {
+    string(stringInput.value);
+});
+
+document.body.append(stringInput, rut);
+document.body.append(stringButton, rut);
+  
+  
 });
