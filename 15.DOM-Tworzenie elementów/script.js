@@ -172,5 +172,41 @@ document.body.append(secondDiv, r00t);
   }
   document.querySelector('#secondButton').addEventListener('click', toOne);
   
+  // Z A D A N I E  8
 
+  var newFormulage = document.createElement("form");
+  root.appendChild(newFormulage);
+  var whatIsIt = document.createElement("input");
+  whatIsIt.setAttribute('type', 'text');
+  whatIsIt.setAttribute('value', 'HowItIsCalled');
+  var someThing = document.createElement("input");
+  someThing.setAttribute('type', 'text');
+  someThing.setAttribute('value', 'SomethingToWrite');
+  var chooseItsColor = document.createElement("input");
+  chooseItsColor.setAttribute('type', 'text');
+  chooseItsColor.setAttribute('value', 'WhatColorDoYouWant');
+  var howManyTimes = document.createElement("input");
+  howManyTimes.setAttribute('type', 'text');
+  howManyTimes.setAttribute('value', 'quantity');
+
+  newFormulage.appendChild(whatIsIt);
+  newFormulage.appendChild(someThing);
+  newFormulage.appendChild(chooseItsColor);
+  newFormulage.appendChild(howManyTimes);
+
+  var dontDOit = document.createElement('button');
+  dontDOit.id = "abc"
+  dontDOit.type = 'button'
+  dontDOit.innerText = "DONE!";
+  newFormulage.appendChild(dontDOit);
+
+  function coolFun(){
+    for(var i = 0; i < howManyTimes.value; i++){
+      var added = document.createElement(whatIsIt.value);
+      added.innerText = someThing.value;
+      added.style.color = chooseItsColor.value;
+      root.appendChild(added);
+    }
+  }
+  document.querySelector('#abc').addEventListener('click', coolFun );
 });
