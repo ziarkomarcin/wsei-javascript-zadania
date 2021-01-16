@@ -440,5 +440,34 @@ stringButton.addEventListener('click', () => {
 document.body.append(stringInput, rut);
 document.body.append(stringButton, rut);
   
+  // Z A D A N I E  13
+  
+  function countForMe(stringArr){  
+  var howManyLetters = [];
+    for(var i = 0; i < stringArr.length; i++){
+      howManyLetters[i] = stringArr[i].length;
+    }     
+     return howManyLetters;
+  }
+
+  function showAvg(summ){
+    var average = summ / tabWithWords.length;
+    return average;
+  }
+
+  function sum(howManyLetters){
+    var summ = howManyLetters.reduce((prev,curr) => prev += curr);
+    return summ;
+  }
+  
+
+ var tabWithWords = ['Mornings','are','for','coffee','and', 'contemplation', 'StrangerThings'];
+  console.log("Letters in each word:");
+  console.log(countForMe(tabWithWords));
+  console.log("Sum of letters:");
+  console.log(sum(countForMe(tabWithWords)));
+  console.log("Average:");
+  console.log(showAvg(sum(countForMe(tabWithWords))));
+  
   
 });
