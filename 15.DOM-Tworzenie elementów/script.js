@@ -469,5 +469,44 @@ document.body.append(stringButton, rut);
   console.log("Average:");
   console.log(showAvg(sum(countForMe(tabWithWords))));
   
+  // Z A D A N I E  14
+  
+  function obj() {
+    return {
+        name: '',
+        surname: '',
+        age: '',
+    };
+}
+
+var itIsMe = obj();
+
+const rut = document.getElementById('root');
+
+function myData(name, surname, age) {
+    itIsMe.name = name;
+    itIsMe.surname = surname;
+    itIsMe.age = age;
+//------------------------------------
+    itIsMe.nameChars = name.length;
+    itIsMe.surnameChars = surname.length;
+    itIsMe.ageChars = age.length;
+
+    if (itIsMe.nameChars > 5 || itIsMe.surnameChars > 5 || itIsMe.ageChars > 5) {
+        var newButton = document.createElement('button');
+        newButton.innerText = 'Przywróć obiekt do stanu początkowego';
+        document.body.append(newButton, rut );
+
+        newButton.addEventListener('click', () => {
+            itIsMe = obj();
+
+            console.log(itIsMe);
+        })
+    }
+
+    console.log(itIsMe);
+}
+
+myData('Marcin', 'Najman', '41');
   
 });
