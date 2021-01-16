@@ -481,7 +481,8 @@ document.body.append(stringButton, rut);
 
 var itIsMe = obj();
 
-const rut = document.getElementById('root');
+// const rut = document.getElementById('root');
+//^ również podebrane z zadań wyżej
 
 function myData(name, surname, age) {
     itIsMe.name = name;
